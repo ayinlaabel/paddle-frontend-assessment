@@ -1,0 +1,57 @@
+.navs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+.branding{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.branding .branding__logo{
+    width: 60px;
+}
+
+.branding .branding__title{
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navsbar{
+    font-size: 14px;
+    display: flex;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+
+}
+
+.menu .menu__item {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.menu .menu__item:not(:last-child){
+    margin-right: 30px;
+}
+
+.menu .menu__link{
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.contact {
+    background: #0036bf;
+}
