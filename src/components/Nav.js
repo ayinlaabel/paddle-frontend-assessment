@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import logo from "./../assets/images/metricks-white.png";
 
-function Nav() {
+function Nav({ test }) {
+  const [click, setClick] = useState(false)
+  // let click = false;
+
+  function contactUs() {
+    console.log(click);
+    setClick(!click)
+    test(click);
+  }
+
   return (
     <nav className="navs">
       <div className="branding">
@@ -21,10 +30,8 @@ function Nav() {
               Blog
             </a>
           </div>
-          <div className="menu__item contact">
-            <a href="#" className="menu__link">
-              Contact us
-            </a>
+          <div onClick={contactUs} className="menu__item contact">
+            <a className="menu__link">Contact us</a>
           </div>
         </div>
       </div>
