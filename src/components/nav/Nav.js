@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Nav.css";
-import logo from "./../assets/images/metricks-white.png";
+import logo from "./../../assets/images/metricks-white.png";
+import { Link } from "react-router-dom"
 
 function Nav({ test }) {
   const [click, setClick] = useState(false)
@@ -8,8 +9,8 @@ function Nav({ test }) {
 
   function contactUs() {
     console.log(click);
-    setClick(!click)
-    test(click);
+    setClick(true)
+    test(true);
   }
 
   return (
@@ -21,17 +22,17 @@ function Nav({ test }) {
       <div className="navsbar">
         <div className="menu">
           <div className="menu__item">
-            <a href="#" className="menu__link">
+            <Link to="/about" className="menu__link">
               About us
-            </a>
+            </Link>
           </div>
           <div className="menu__item">
-            <a href="#" className="menu__link">
+            <Link to="/blog" className="menu__link">
               Blog
-            </a>
+            </Link>
           </div>
           <div onClick={contactUs} className="menu__item contact">
-            <a className="menu__link">Contact us</a>
+            <div className="menu__link">Contact us</div>
           </div>
         </div>
       </div>

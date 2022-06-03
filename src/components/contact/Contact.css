@@ -34,6 +34,7 @@
   border-radius: 50%;
   border: none;
   background: #fff;
+  cursor: pointer;
 }
 
 .form__container {

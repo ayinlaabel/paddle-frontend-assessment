@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsArrowRight } from "react-icons/bs"
 import './Contact.css'
 
-function Contact(){
+function Contact({contact}){
+    const [click, setClick] = useState(contact);
+
+    function closeContactUs() {
+        console.log(click)
+        console.log(click);
+        setClick(!click)
+        contact(click);
+      }
+
     return(
         <div className="contact__info">
             <div className="contact__empty"></div>
             <div className="contact__container">
-                <button className="button">
+                <button onClick={closeContactUs} className="button">
                     <BsArrowRight />
                 </button>
                 <div className="form__container">
