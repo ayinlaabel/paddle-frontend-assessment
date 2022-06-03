@@ -1,0 +1,29 @@
+.repo {
+  display: flex;
+  flex-direction: column;
+}
+
+.repo__starred {
+  display: flex;
+  width: 50%;
+  height: 150px;
+  padding: 10px;
+}
+.image {
+  height: 150px;
+}
+
+.image img {
+  max-height: 100%;
+}
+.content {
+  margin-left: 10px;
+}
+
+.feature {
+  display: flex;
+}
+
+.i:not(:last-child) {
+  margin-right: 10px;
+}

@@ -29,7 +29,7 @@ const Home = ({ data }) => {
     }
   }
   return (
-    <>
+    < div className="Home">
       <Nav />
       <Routes>
         <Route path="/" element={<Navigate replace to="/coming-soon" />} />
@@ -37,7 +37,7 @@ const Home = ({ data }) => {
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 };
 export default Home;
