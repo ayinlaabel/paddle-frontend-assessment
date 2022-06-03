@@ -1,5 +1,4 @@
 import React from "react";
-import Blur from "react-css-blur";
 import "./About.css";
 
 const About = () => {

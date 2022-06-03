@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
-import Blur from "react-css-blur";
 import "./App.css";
 import Nav from "./components/nav/Nav";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/about/About";
+import Contact from "./components/contact/Contact";
+import Blur from "react-css-blur";
 import { useState } from "react";
 
 import {
@@ -16,19 +17,18 @@ import {
 
 function App() {
   const [display, setDisplay] = useState(null);
-  const [contactDisplay, setContactDisplay] = useState();
+  const [contactDisplay, setContactDisplay] = useState(null);
 
   function displayContact(data) {
-    // console.log(data);
-    if (data === true) {
+    console.log(data);
+    if (display === null) {
       setDisplay("data");
       data = !data;
-      setContactDisplay(data);
+      setContactDisplay( "data");
     } else {
-      contactDisplay = true
+      contactDisplay = true;
       setDisplay(null);
       data = !data;
-      setContactDisplay(data);
     }
   }
 
@@ -49,7 +49,7 @@ function App() {
         <Nav test={displayContact} />
         <Routes>
           <Route path="/" element={<Navigate replace to="/coming-soon" />} />
-          <Route exact path="/coming-soon" element={<Home />} />
+          <Route exact path="/coming-soon" element={<Home data={contactDisplay} />} />
           <Route exact path="/about" element={<About />} />
         </Routes>
         <Footer />
