@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import "./Nav.css";
 import logo from "./../../assets/images/metricks-white.png";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Nav({ test }) {
-  const [click, setClick] = useState(false)
+  const [click, setClick] = useState(false);
   // let click = false;
 
   function contactUs() {
     console.log(click);
-    setClick(true)
+    setClick(true);
     test(true);
   }
 
   return (
     <nav className="navs">
-      <div className="branding">
-        <img src={logo} alt="" className="branding__logo" />
-        <p className="branding__title">Matricks</p>
-      </div>
+      <Link to="/">
+        <div className="branding">
+          <img src={logo} alt="" className="branding__logo" />
+          <p className="branding__title">Matricks</p>
+        </div>
+      </Link>
       <div className="navsbar">
         <div className="menu">
           <div className="menu__item">

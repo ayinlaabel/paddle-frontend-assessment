@@ -4,6 +4,7 @@ import Nav from "./components/nav/Nav";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/about/About";
+import Github from "./pages/github/Github";
 import Contact from "./components/contact/Contact";
 import Blur from "react-css-blur";
 import { useState } from "react";
@@ -14,24 +15,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import Comingsoon from "./pages/comingsoon/Comingsoon";
 
 function App() {
-  const [display, setDisplay] = useState(null);
-  const [contactDisplay, setContactDisplay] = useState(null);
-
-  function displayContact(data) {
-    console.log(data);
-    if (display === null) {
-      setDisplay("data");
-      data = !data;
-      setContactDisplay( "data");
-    } else {
-      contactDisplay = true;
-      setDisplay(null);
-      data = !data;
-    }
-  }
-
   // function dd(data){
   //   if (display === null) {
   //     setDisplay("data");
@@ -46,13 +32,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Nav test={displayContact} />
         <Routes>
-          <Route path="/" element={<Navigate replace to="/coming-soon" />} />
-          <Route exact path="/coming-soon" element={<Home data={contactDisplay} />} />
-          <Route exact path="/about" element={<About />} />
+          <Route path="/" element={<Home />}>
+            <Route exact path="/coming-soon" element={<Comingsoon />} />
+            <Route exact path="/about" element={<About />} />
+          </Route>
+          <Route exact path="/github" element={<Github />} />
         </Routes>
-        <Footer />
       </Router>
     </div>
   );

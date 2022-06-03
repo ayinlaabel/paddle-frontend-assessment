@@ -1,34 +1,43 @@
 import React, { useState } from "react";
-import Main from "../components/main/Main";
+import Footer from "../components/footer/Footer";
+import Nav from "../components/nav/Nav";
 import Contact from "../components/contact/Contact";
+import About from "./about/About";
+import Commingsoon from "./comingsoon/Comingsoon";
 
-import Blur from "react-css-blur";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 const Home = ({ data }) => {
-  const [datas, setDatas] = useState(data);
-  if (datas != null) {
-    setDatas(null);
-    data(null);
-  }
+  const [display, setDisplay] = useState(null);
+  const [contactDisplay, setContactDisplay] = useState(null);
 
-  const dd = (d) => {
-    if (d == null) {
-      setDatas(d);
+  function displayContact(data) {
+    console.log(data);
+    if (display === null) {
+      setDisplay("data");
+      data = !data;
+      setContactDisplay("data");
+    } else {
+      contactDisplay = true;
+      setDisplay(null);
+      data = !data;
     }
-  };
+  }
   return (
-    <div>
-      {data ? (
-        <>
-          <Blur radius="10px">
-            <Main />
-          </Blur>
-          <Contact test={dd} />
-        </>
-      ) : (
-        <Main />
-      )}
-    </div>
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/coming-soon" />} />
+        <Route path="/coming-soon" element={<Commingsoon />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
+    </>
   );
 };
 export default Home;
